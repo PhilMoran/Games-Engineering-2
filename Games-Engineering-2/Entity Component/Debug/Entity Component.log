@@ -1,2 +1,5 @@
-﻿  Entity Component.vcxproj -> C:\Users\gameuser\Desktop\Games Engineering\Entity Component\Debug\Entity Component.exe
-  Entity Component.vcxproj -> C:\Users\gameuser\Desktop\Games Engineering\Entity Component\Debug\Entity Component.pdb (Partial PDB)
+﻿  Source.cpp
+c:\users\gameuser\desktop\games-engineering-2\games-engineering-2\entity component\positioncomponent.h(13): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\games-engineering-2\games-engineering-2\entity component\controlcomponent.h(10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+  Entity Component.vcxproj -> C:\Users\gameuser\Desktop\Games-Engineering-2\Games-Engineering-2\Entity Component\Debug\Entity Component.exe
+  Entity Component.vcxproj -> C:\Users\gameuser\Desktop\Games-Engineering-2\Games-Engineering-2\Entity Component\Debug\Entity Component.pdb (Partial PDB)

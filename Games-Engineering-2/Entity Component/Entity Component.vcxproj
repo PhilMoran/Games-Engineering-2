@@ -124,8 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ComponentSystem.cpp" />
-    <ClCompile Include="HealthSystem.cpp" />
-    <ClCompile Include="RenderSystem.cpp" />
+    <ClCompile Include="ControlSystem.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +132,7 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="ComponentSystem.h" />
     <ClInclude Include="ControlComponent.h" />
+    <ClInclude Include="ControlSystem.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="HealthComponent.h" />
     <ClInclude Include="AI_System.h" />

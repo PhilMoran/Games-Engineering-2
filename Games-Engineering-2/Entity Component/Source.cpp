@@ -5,6 +5,8 @@
 #include "PositionComponent.h"
 #include "ControlComponent.h"
 #include "AI_System.h"
+#include "RenderSystem.h"
+#include "ControlSystem.h"
 #include <iostream>
 
 using namespace std;
@@ -27,6 +29,8 @@ int main(int argc, char* argv[])
 	PositionComponent positionComponent;
 	ControlComponent controlComponent;
 	AI_System aiSystem;
+	RenderSystem renderSystem;
+	ControlSystem controlSystem;
 	
 
 	player.addComponent(healthComponent);
@@ -41,10 +45,7 @@ int main(int argc, char* argv[])
 
 	player.addComponent(controlComponent);
 
-	aiSystem.addEntity(alien);
-	aiSystem.addEntity(dog);
-	aiSystem.addEntity(cat);
-
+	
 
 	bool isRunning = true;
 
@@ -58,9 +59,14 @@ int main(int argc, char* argv[])
 			{
 				isRunning = false;
 			}
-			
 		}
-		
+		aiSystem.addEntity(healthComponent);
+		aiSystem.addEntity(positionComponent);
+
+		renderSystem.addEntity(positionComponent);
+
+		controlSystem.addEntity(positionComponent);
+		controlSystem.addEntity(controlComponent);
 	}
 	SDL_Quit();
 	return 0;

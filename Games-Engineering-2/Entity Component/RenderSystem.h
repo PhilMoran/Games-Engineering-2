@@ -1,11 +1,14 @@
 #pragma once
-#include "Entity.h"
+#include "Component.h"
+#include <iostream>
 
 class RenderSystem
 {
+	std::vector<Component> entities;
 public:
-	RenderSystem();
-	~RenderSystem();
+	RenderSystem() {};
+	~RenderSystem() {};
+	void addEntity(Component e) {}
 	void update();
 };
 

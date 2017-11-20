@@ -1,9 +1,10 @@
 #pragma once
 #include "Component.h"
+#include <iostream>
 class ControlComponent : public Component
 {
 public:
-	ControlComponent() : pos(200, 200) {}
+	ControlComponent() : pos(200, 200) { std::cout << "Control Component System" << std::endl; }
 	int getPosition()
 	{
 		return pos.x, pos.y;

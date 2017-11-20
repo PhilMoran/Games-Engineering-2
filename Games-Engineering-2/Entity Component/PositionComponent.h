@@ -7,7 +7,7 @@
 class PositionComponent : public Component
 {
 public:
-	PositionComponent() : pos(200,200){}
+	PositionComponent() : pos(200, 200) { std::cout << "Position Component Update" << std::endl; }
 	int getPosition()
 	{
 		return pos.x, pos.y; 

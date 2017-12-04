@@ -9,8 +9,7 @@ public:
 	void addEntity(Component e){}
 	void update()
 	{
-		std::cout << "Health Component Updating" << std::endl;
-		std::cout << "Position Component Updating" << std::endl;
+		std::cout << "AI Updating" << std::endl;
 
 	}
 };

@@ -9,6 +9,9 @@ public:
 	RenderSystem() {};
 	~RenderSystem() {};
 	void addEntity(Component e) {}
-	void update();
+	void update()
+	{
+		std::cout << "Render Updating" << std::endl;
+	}
 };
 

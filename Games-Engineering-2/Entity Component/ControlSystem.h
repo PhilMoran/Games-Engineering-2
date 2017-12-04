@@ -8,5 +8,8 @@ public:
 	ControlSystem() {};
 	~ControlSystem() {};
 	void addEntity(Component e) {}
-	void update();
+	void update()
+	{
+		std::cout << "Control System" << std::endl;
+	}
 };

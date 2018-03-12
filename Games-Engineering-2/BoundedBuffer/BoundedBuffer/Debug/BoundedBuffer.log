@@ -1,4 +1,2 @@
 ﻿  BoundedBuffer.cpp
-c:\users\gameuser\desktop\games-engineering-2\games-engineering-2\boundedbuffer\boundedbuffer\boundedbuffer.cpp(68): warning C4553: '==': operator has no effect; did you intend '='?
-c:\users\gameuser\desktop\games-engineering-2\games-engineering-2\boundedbuffer\boundedbuffer\boundedbuffer.cpp(80): warning C4553: '==': operator has no effect; did you intend '='?
   BoundedBuffer.vcxproj -> C:\Users\gameuser\Desktop\Games-Engineering-2\Games-Engineering-2\BoundedBuffer\Debug\BoundedBuffer.exe

@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\gameuser\desktop\games-engineering-2\games-engineering-2\ambush\sdltest\sdltest\starterkitsimple\Levels.h(11): warning C4091: 'typedef ': ignored on left of 'Levels::Map' when no variable is declared
+     Creating library C:\Users\gameuser\Desktop\Games-Engineering-2\Games-Engineering-2\Ambush\SDLTest\SDLTest\StarterKitSimple\Release\Project1.lib and object C:\Users\gameuser\Desktop\Games-Engineering-2\Games-Engineering-2\Ambush\SDLTest\SDLTest\StarterKitSimple\Release\Project1.exp
+LINK : fatal error LNK1561: entry point must be defined

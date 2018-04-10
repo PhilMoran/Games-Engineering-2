@@ -60,6 +60,7 @@ void Game::LoadContent()
 	m_p_Texture = SDL_CreateTextureFromSurface(m_p_Renderer, m_p_Surface);
 	SDL_FreeSurface(m_p_Surface);
 	level.initTiles(m_p_Renderer);
+	aiEnemies.Load(m_p_Renderer);
 
 	if(SDL_QueryTexture(m_p_Texture, NULL, NULL, &m_Source.w, &m_Destination.h)==0)
 	{
@@ -90,11 +91,12 @@ void Game::Render()
 	DEBUG_MSG("Width Source" + m_Destination.w);
 	DEBUG_MSG("Width Destination" + m_Destination.w);
 	level.drawMap(m_p_Renderer);
+	aiEnemies.Render(m_p_Renderer);
 	if (m_p_Renderer != nullptr && m_p_Texture != nullptr)
 	{
 		SDL_RenderCopy(m_p_Renderer, m_p_Texture, &m_Source, &m_Destination);
 	}
-	
+
 	SDL_RenderPresent(m_p_Renderer);
 }
 

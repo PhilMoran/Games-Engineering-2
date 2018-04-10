@@ -3,6 +3,7 @@
 #include "Debug.h"
 #include <SDL.h>
 #include "Levels.h"
+#include "AI.h"
 
 class Game
 {
@@ -26,5 +27,7 @@ private:
 	SDL_Rect m_Destination;
 	SDL_Surface* m_p_Surface;
 	Levels level;
+	AI aiEnemies;
+
 };
 #endif

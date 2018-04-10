@@ -4,6 +4,7 @@
 #include <SDL_timer.h>
 #include <iostream>
 #include "Game.h"
+
 #include <thread>
 #include <string>
 using namespace std;
@@ -132,11 +133,11 @@ int main(int argc, char** argv){
 	Game* game = new Game();
 
 	//Adjust screen positions as needed
-	game->Initialize("DGPP Skelatol",300,100,800,600, SDL_WINDOW_INPUT_FOCUS);
+	game->Initialize("DGPP Skelatol",300,100,1920,1080, SDL_WINDOW_INPUT_FOCUS);
 	DEBUG_MSG("Game Initialised");
 
 	game->LoadContent();
-
+	
 	thread t1(&Process::run, Process((*(game)))); //Passing references
 	t1.detach(); //detaches from SDL mainline
 
@@ -148,7 +149,8 @@ int main(int argc, char** argv){
 	sdlThreadPhysicsAI = SDL_CreateThread(&ProcessArtificialIntelligence::run, "AI Thread", game);
 
 	DEBUG_MSG("Game Loop Starting......");
-	while(game->IsRunning())
+
+	while (game->IsRunning())
 	{
 		game->HandleEvents();
 		game->Update();

@@ -17,7 +17,7 @@ private:
 	
 	vector<SDL_Texture*> ai;
 	vector<SDL_Surface*> aiSurf;
-	SDL_Rect ai_Source[5];
+	SDL_Rect ai_Source;
 	SDL_Rect ai_Dest[5];
 
 	int mapNum = 1;

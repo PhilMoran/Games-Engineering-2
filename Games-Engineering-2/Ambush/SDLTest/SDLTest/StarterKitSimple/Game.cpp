@@ -87,6 +87,7 @@ void Game::LoadContent()
 
 void Game::Render()
 {
+	
 	SDL_RenderClear(m_p_Renderer);
 	DEBUG_MSG("Width Source" + m_Destination.w);
 	DEBUG_MSG("Width Destination" + m_Destination.w);
@@ -96,13 +97,12 @@ void Game::Render()
 	{
 		SDL_RenderCopy(m_p_Renderer, m_p_Texture, &m_Source, &m_Destination);
 	}
-
 	SDL_RenderPresent(m_p_Renderer);
 }
-
 void Game::Update()
 {
 	DEBUG_MSG("Updating....");
+	aiEnemies.Update();
 }
 
 void Game::HandleEvents()
@@ -133,9 +133,6 @@ void Game::HandleEvents()
 				case SDLK_RIGHT:
 					DEBUG_MSG("Right Key Pressed");
 					m_Destination.x += 32;
-					break;
-				default:
-					SDL_SetRenderDrawColor(m_p_Renderer, 255, 255, 255, 255);
 					break;
 				}
 	}

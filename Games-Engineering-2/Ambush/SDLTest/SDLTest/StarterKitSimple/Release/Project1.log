@@ -1,4 +1,26 @@
-﻿  main.cpp
-c:\users\gameuser\desktop\games-engineering-2\games-engineering-2\ambush\sdltest\sdltest\starterkitsimple\Levels.h(11): warning C4091: 'typedef ': ignored on left of 'Levels::Map' when no variable is declared
-     Creating library C:\Users\gameuser\Desktop\Games-Engineering-2\Games-Engineering-2\Ambush\SDLTest\SDLTest\StarterKitSimple\Release\Project1.lib and object C:\Users\gameuser\Desktop\Games-Engineering-2\Games-Engineering-2\Ambush\SDLTest\SDLTest\StarterKitSimple\Release\Project1.exp
-LINK : fatal error LNK1561: entry point must be defined
+﻿     Creating library C:\Users\gameuser\Desktop\Games-Engineering-2\Games-Engineering-2\Ambush\SDLTest\SDLTest\StarterKitSimple\Release\Project1.lib and object C:\Users\gameuser\Desktop\Games-Engineering-2\Games-Engineering-2\Ambush\SDLTest\SDLTest\StarterKitSimple\Release\Project1.exp
+AI.obj : error LNK2001: unresolved external symbol _SDL_RenderCopy
+AI.obj : error LNK2001: unresolved external symbol _SDL_LoadBMP_RW
+AI.obj : error LNK2001: unresolved external symbol _SDL_FreeSurface
+AI.obj : error LNK2001: unresolved external symbol _SDL_RWFromFile
+AI.obj : error LNK2001: unresolved external symbol _SDL_CreateTextureFromSurface
+Game.obj : error LNK2001: unresolved external symbol _SDL_RenderClear
+Game.obj : error LNK2001: unresolved external symbol _SDL_DestroyRenderer
+Game.obj : error LNK2001: unresolved external symbol _SDL_Init
+Game.obj : error LNK2001: unresolved external symbol _SDL_DestroyWindow
+Game.obj : error LNK2001: unresolved external symbol _SDL_Quit
+Game.obj : error LNK2001: unresolved external symbol _SDL_QueryTexture
+Game.obj : error LNK2001: unresolved external symbol _SDL_PollEvent
+Game.obj : error LNK2001: unresolved external symbol _SDL_CreateRenderer
+Game.obj : error LNK2001: unresolved external symbol _SDL_RenderPresent
+Game.obj : error LNK2001: unresolved external symbol _SDL_CreateWindow
+Game.obj : error LNK2001: unresolved external symbol _SDL_SetRenderDrawColor
+InputManager.obj : error LNK2001: unresolved external symbol _SDL_GetMouseState
+main.obj : error LNK2001: unresolved external symbol _SDL_DestroyMutex
+main.obj : error LNK2001: unresolved external symbol _SDL_UnlockMutex
+main.obj : error LNK2001: unresolved external symbol _SDL_CreateMutex
+main.obj : error LNK2001: unresolved external symbol _SDL_GetTicks
+main.obj : error LNK2001: unresolved external symbol _SDL_CreateThread
+main.obj : error LNK2001: unresolved external symbol _SDL_LockMutex
+MSVCRT.lib(exe_main.obj) : error LNK2001: unresolved external symbol _main
+C:\Users\gameuser\Desktop\Games-Engineering-2\Games-Engineering-2\Ambush\SDLTest\SDLTest\StarterKitSimple\Release\Project1.exe : fatal error LNK1120: 24 unresolved externals

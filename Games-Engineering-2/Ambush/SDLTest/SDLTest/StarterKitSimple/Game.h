@@ -14,12 +14,14 @@ public:
 	void LoadContent();
 	void UnloadContent();
 	void Render();
+	void RenderMap();
 	void Update();
 	void HandleEvents();
 	bool IsRunning();
 	void CleanUp();
 private:
 	bool m_running;
+	
 	SDL_Window* m_p_Window;
 	SDL_Renderer* m_p_Renderer;
 	SDL_Texture* m_p_Texture;

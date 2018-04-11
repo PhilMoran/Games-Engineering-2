@@ -4,7 +4,7 @@
 #include <SDL_timer.h>
 #include <iostream>
 #include "Game.h"
-
+#include "AI.h"
 #include <thread>
 #include <string>
 using namespace std;
@@ -18,6 +18,7 @@ public:
 	{
 		DEBUG_MSG("Physics Updating");
 		return 0;
+		
 	}
 };
 
@@ -27,25 +28,28 @@ public:
 	unsigned int update(void* data)
 	{
 		DEBUG_MSG("Artificial Intelligence Updating");
+
 		return 0;
 	}
 };
 
-class Process
+class RenderObjects
 {
 public:
-	Process(){}
-	Process(const Game& game) : m_Game(game)
+	RenderObjects(){}
+	RenderObjects(const Game& game) : m_Game(game)
 	{
-
+		m_Game.LoadContent();
 	}
-	~Process(){};
+	~RenderObjects(){};
 	void run()
 	{
 		DEBUG_MSG("Thread Running");
 		while(m_Game.IsRunning())
 		{
-			//DEBUG_MSG(".");
+			m_Game.Render();
+			m_Game.Update();
+			DEBUG_MSG("EventHandle");
 		}
 	}
 private:
@@ -94,6 +98,7 @@ class ProcessArtificialIntelligence
 public:
 	static int run(void* data)
 	{
+		//AI* ai = new AI();
 		ArtificialIntelligence ai;
 		unsigned int result = 0;
 		DEBUG_MSG("Process Artificial Intelligence Running");
@@ -131,37 +136,28 @@ int main(int argc, char** argv){
 	DEBUG_MSG("Game Object Created");
 
 	Game* game = new Game();
-
+	AI * ai = new AI();
 	//Adjust screen positions as needed
 	game->Initialize("DGPP Skelatol",300,100,1920,1080, SDL_WINDOW_INPUT_FOCUS);
-	DEBUG_MSG("Game Initialised");
+//	DEBUG_MSG("Game Initialised");
 
-	game->LoadContent();
 	
-	thread t1(&Process::run, Process((*(game)))); //Passing references
-	t1.detach(); //detaches from SDL mainline
-
-	SDL_Thread* sdlThreadPhysics;
-	sdlThreadPhysics = SDL_CreateThread(&ProcessPhysics::run, "Physics Thread", game);
+	
+	thread RenderGame(&RenderObjects::run, RenderObjects((*(game)))); //Passing references
+	RenderGame.detach(); //detaches from SDL mainline
 
 
-	SDL_Thread* sdlThreadPhysicsAI;
-	sdlThreadPhysicsAI = SDL_CreateThread(&ProcessArtificialIntelligence::run, "AI Thread", game);
-
-	DEBUG_MSG("Game Loop Starting......");
-
+	//DEBUG_MSG("Game Loop Starting......");*/
 	while (game->IsRunning())
 	{
-		game->HandleEvents();
-		game->Update();
-		game->Render();
+		
 	}
 
-	DEBUG_MSG("Calling Cleanup");
+	//DEBUG_MSG("Calling Cleanup");
 	game->CleanUp();
 	game->UnloadContent();
 
-	SDL_DestroyMutex(mutex);
+	//SDL_DestroyMutex(mutex);
 	
 	return 0;
 }

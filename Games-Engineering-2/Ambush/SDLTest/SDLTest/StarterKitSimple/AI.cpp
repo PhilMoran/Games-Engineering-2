@@ -1,9 +1,23 @@
 #include "AI.h"
-
+#include <thread>
+#include <string>
 
 
 AI::AI()
 {
+	for (int i = 0; i < 5; i++)
+	{
+		ai_Dest[i].x = rand() % 400 + 500;
+		ai_Dest[i].y = rand() % 200 + 500;
+		ai_Dest[i].w = 32;
+		ai_Dest[i].h = 32;
+
+		ai_Source.x = 0;
+		ai_Source.y = 0;
+		ai_Source.w = 64;
+		ai_Source.h = 105;
+	}
+
 }
 
 
@@ -25,16 +39,7 @@ void AI::Render(SDL_Renderer * m_rend)
 {
 	for (int i = 0; i < 5; i++)
 	{
-		ai_Dest[i].x = 100;
-		ai_Dest[i].y = 100;
-		ai_Dest[i].w = 500;
-		ai_Dest[i].h = 500;
-
-		ai_Source[i].x = 0;
-		ai_Source[i].y = 0;
-		ai_Dest[i].w = 64;
-		ai_Dest[i].h = 105;
-		SDL_RenderCopy(m_rend, ai.at(i), &ai_Source[i], &ai_Dest[i]);
+		SDL_RenderCopy(m_rend, ai.at(i), &ai_Source, &ai_Dest[i]);
 	}
 }
 
@@ -53,10 +58,14 @@ void AI::SpawnZone()
 
 void AI::Update()
 {
-
+	
+	for (int i = 0; i < 500; i++)
+	{
+		ai_Dest[i].x -= 0.1;
+	}
 }
 
 void AI::Collisions()
 {
-
+	
 }

@@ -4,6 +4,7 @@
 #include <SDL_timer.h>
 #include <iostream>
 #include "Game.h"
+#include "Solver.h"
 #include "AI.h"
 #include <thread>
 #include <string>
@@ -28,7 +29,6 @@ public:
 	unsigned int update(void* data)
 	{
 		DEBUG_MSG("Artificial Intelligence Updating");
-
 		return 0;
 	}
 };
@@ -47,9 +47,11 @@ public:
 		DEBUG_MSG("Thread Running");
 		while(m_Game.IsRunning())
 		{
+			
 			m_Game.Render();
 			m_Game.Update();
 			DEBUG_MSG("EventHandle");
+			m_Game.HandleEvents();
 		}
 	}
 private:
@@ -134,30 +136,36 @@ public:
 int main(int argc, char** argv){
 
 	DEBUG_MSG("Game Object Created");
-
+	  
 	Game* game = new Game();
 	AI * ai = new AI();
+	Solver solve(Vector2(0, 0), Vector2(19, 19), 20);
 	//Adjust screen positions as needed
 	game->Initialize("DGPP Skelatol",300,100,1920,1080, SDL_WINDOW_INPUT_FOCUS);
-//	DEBUG_MSG("Game Initialised");
-
+    //DEBUG_MSG("Game Initialised");
+	//game->LoadContent();
 	
-	
+	SDL_LockMutex(mutex); 
 	thread RenderGame(&RenderObjects::run, RenderObjects((*(game)))); //Passing references
 	RenderGame.detach(); //detaches from SDL mainline
+	SDL_UnlockMutex(mutex);
 
+	
 
 	//DEBUG_MSG("Game Loop Starting......");*/
 	while (game->IsRunning())
 	{
-		
+		/*game->Render();
+		game->Update();
+		game->HandleEvents();*/
+		//solve.aStar();
 	}
 
 	//DEBUG_MSG("Calling Cleanup");
 	game->CleanUp();
 	game->UnloadContent();
 
-	//SDL_DestroyMutex(mutex);
+	SDL_DestroyMutex(mutex);
 	
 	return 0;
 }

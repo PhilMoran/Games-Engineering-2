@@ -1,7 +1,12 @@
 #include "AI.h"
 #include <thread>
 #include <string>
-
+#include <iostream>
+#include <cmath>
+#include <list>
+#include <vector>
+#include <algorithm>
+#include <Vector2D.h>
 
 AI::AI()
 {
@@ -58,11 +63,11 @@ void AI::SpawnZone()
 
 void AI::Update()
 {
-	
-	for (int i = 0; i < 500; i++)
+	for (int i = 0; i < 5; i++)
 	{
-		ai_Dest[i].x -= 0.1;
+		ai_Dest[i].x -= 1;
 	}
+	
 }
 
 void AI::Collisions()

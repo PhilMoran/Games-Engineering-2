@@ -1,27 +1,20 @@
-#include <Vector2D.h>
+#include "Vector2D.h"
 
-using namespace muddygames;
 
-Vector2D::Vector2D(float x, float y) : m_x(x), m_y(y)
+
+Vector2::Vector2()
 {
 }
 
-float Vector2D::GetX()
+
+Vector2::~Vector2()
 {
-	return m_x;
 }
 
-float Vector2D::GetY()
+Vector2 Vector2::operator+(const Vector2 & other)
 {
-	return m_y;
-}
-
-void Vector2D::SetX(float x)
-{
-	m_x = x;
-}
-
-void Vector2D::SetY(float y)
-{
-	m_y = y;
+	Vector2 temp;
+	temp.x = this->x + other.x;
+	temp.y = this->y + other.y;
+	return temp;
 }

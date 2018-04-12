@@ -40,8 +40,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir);$(SDL_SDK)\include;$(SDL_IMAGE_SDK)\include;C:\Users\gameuser\Documents\DevTools\SDL2-2.0.6\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SDL_SDK)\lib\x86;C:\Users\gameuser\Documents\DevTools\SDL2-2.0.6\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir);$(SDL_SDK)\include;$(SDL_IMAGE_SDK)\include;C:\Users\gameuser\Documents\DevTools\SDL2-2.0.6\include;C:\Users\Phillip\Documents\Devtools\SDL2-2.0.8\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Phillip\Documents\Devtools\SDL2-2.0.8\lib\x86;C:\Users\gameuser\Documents\DevTools\SDL2-2.0.6\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>C:\Users\gameuser\Documents\DevTools\SDL2-2.0.6\include;$(IncludePath)</IncludePath>
@@ -85,6 +85,9 @@
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Levels.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MapLayout.cpp" />
+    <ClCompile Include="Solver.cpp" />
+    <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AI.h" />
@@ -93,6 +96,9 @@
     <ClInclude Include="Debug.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Levels.h" />
+    <ClInclude Include="MapLayout.h" />
+    <ClInclude Include="Solver.h" />
+    <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

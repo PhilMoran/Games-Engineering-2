@@ -93,7 +93,6 @@ void Levels::drawMap(SDL_Renderer * m_rend)
 				{
 					SDL_RenderCopy(m_rend, wall, &sourceRect, &destRect);
 				}
-				std::cout << "DestRect :" << destRect.x << std::endl;
 				if (map.tile[y][x] == 0)
 				{
 					SDL_RenderCopy(m_rend, floor, &sourceRect, &destRect);

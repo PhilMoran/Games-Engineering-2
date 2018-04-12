@@ -103,6 +103,7 @@ void Game::Update()
 {
 	DEBUG_MSG("Updating....");
 	aiEnemies.Update();
+	HandleEvents();
 }
 
 void Game::HandleEvents()
